@@ -1,0 +1,96 @@
+{
+  "brand": {
+    "org": "تاون سكوير",
+    "name": "تاون سكوير كونترول",
+    "tagline": "إدارة العمليات الأمنية وبلاغات الأعطال"
+  },
+  "nav": {
+    "dashboard": "لوحة العمليات",
+    "incidents": "إدارة البلاغات والأعطال",
+    "reportNew": "تسجيل بلاغ جديد",
+    "contractorPortal": "بوابة المقاولين",
+    "admin": "التحكم الإداري",
+    "users": "إدارة المستخدمين",
+    "routing": "مصفوفة توجيه المقاولين",
+    "reports": "التقارير التشغيلية",
+    "auditLogs": "سجلات التدقيق الأمني",
+    "outbox": "صندوق الإشعارات الصادرة",
+    "settings": "إعدادات النظام",
+    "signOut": "تسجيل الخروج"
+  },
+  "status": {
+    "open": "مفتوح",
+    "in_progress": "قيد التنفيذ",
+    "pending": "معلق",
+    "resolved": "تم الحل"
+  },
+  "priority": {
+    "low": "منخفضة",
+    "medium": "متوسطة",
+    "high": "أولوية قصوى"
+  },
+  "incidentForm": {
+    "title": "بلاغ عطل أجهزة أمنية",
+    "subtitle": "إرسال البلاغات - غرفة التحكم بمجتمع تاون سكوير",
+    "zoneLabel": "المنطقة التشغيلية",
+    "zonePlaceholder": "اختر منطقة المجتمع (المنطقة 1 - 4)",
+    "siteLabel": "الموقع / المبنى",
+    "sitePlaceholder": "اختر الموقع أو المستوى المحدد",
+    "categoryLabel": "فئة المعدات",
+    "categoryPlaceholder": "اختر الفئة (كاميرات، حواجز، أجهزة التسجيل...)",
+    "cameraNumberLabel": "رقم الكاميرا أو مرجع الأصل",
+    "cameraNumberPlaceholder": "مثال: CAM-Z1-042",
+    "exactLocationLabel": "الموقع الدقيق بالتفصيل",
+    "exactLocationPlaceholder": "مثال: غرفة الاتصالات IDF12 2A1 الطابق الثالث بجوار المصعد",
+    "priorityLabel": "الأولوية ودرجة الإلحاح",
+    "descriptionLabel": "وصف العطل والملاحظات",
+    "descriptionPlaceholder": "اشرح الأعراض، أضواء الخطأ، أو التأثير الأمني...",
+    "photoLabel": "الأدلة المصورة للبلاغ",
+    "photoHelp": "JPG أو PNG أو WEBP حتى 15 ميجابايت. الحد الأقصى 5 صور.",
+    "submitBtn": "إرسال وتوثيق البلاغ",
+    "submitting": "جارٍ إنشاء التذكرة...",
+    "successTitle": "تم توثيق البلاغ بنجاح",
+    "successMsg": "تم إصدار رقم التذكرة وجدولة إرسالها إلى المقاول المعتمد."
+  },
+  "contractor": {
+    "portalTitle": "بوابة المقاول المعتمد",
+    "portalDesc": "مساحة العمل المخصصة لإنجاز وتحديث مهام الصيانة الأمنية المكلفة",
+    "assignedTickets": "البلاغات المخصصة",
+    "acknowledgeBtn": "تأكيد استلام البلاغ",
+    "submitReportBtn": "تقديم تقرير الصيانة",
+    "submitQuotationBtn": "تقديم عرض السعر",
+    "workPerformed": "الأعمال المنفذة",
+    "findings": "نتائج الفحص والتشخيص",
+    "recommendedAction": "الإجراءات الموصى بها",
+    "completionStatus": "حالة الإنجاز",
+    "quotationRef": "رقم مرجع عرض السعر",
+    "amountAED": "القيمة التقديرية (درهم إماراتي)"
+  },
+  "admin": {
+    "statsTitle": "قيادة العمليات الأمنية",
+    "totalIncidents": "إجمالي البلاغات",
+    "openIncidents": "بلاغات نشطة / مفتوحة",
+    "pendingIncidents": "معلقة بانتظار الإجراء",
+    "resolvedIncidents": "بلاغات منجزة",
+    "highPriority": "أولوية قصوى",
+    "exportCsv": "تصدير بيانات البلاغات (CSV)",
+    "routingRules": "مصفوفة توجيه الفئات النشطة"
+  },
+  "common": {
+    "search": "بحث برقم التذكرة، الكاميرا، الموقع...",
+    "filter": "تصفية",
+    "all": "الكل",
+    "zone": "المنطقة",
+    "category": "الفئة",
+    "date": "تاريخ البلاغ",
+    "ticketNumber": "رقم التذكرة",
+    "provider": "المقاول المكلف",
+    "actions": "الإجراءات",
+    "viewDetails": "عرض التفاصيل",
+    "cancel": "إلغاء",
+    "save": "حفظ التغييرات",
+    "loading": "جارٍ تحميل البيانات...",
+    "unauthorized": "غير مصرح: ليس لديك الصلاحية للوصول إلى هذا المصدر.",
+    "language": "اللغة"
+  }
+}

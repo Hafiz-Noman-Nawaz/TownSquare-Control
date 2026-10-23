@@ -1,0 +1,28 @@
+{
+  "name": "townsquare-control",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Town Square Security Operations & Incident Management Platform",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=client",
+    "start": "npm run start --workspace=client",
+    "lint": "npm run lint --workspace=client",
+    "test": "npm run test --workspaces --if-present",
+    "worker": "npm run worker --workspace=server",
+    "worker:dev": "npm run worker:dev --workspace=server"
+  },
+  "keywords": [
+    "security-operations",
+    "incident-management",
+    "town-square",
+    "nextjs",
+    "supabase"
+  ],
+  "author": "Town Square Engineering",
+  "license": "UNLICENSED"
+}

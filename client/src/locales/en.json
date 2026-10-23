@@ -1,0 +1,96 @@
+{
+  "brand": {
+    "org": "TOWN SQUARE",
+    "name": "TownSquare Control",
+    "tagline": "Security Operations & Incident Management"
+  },
+  "nav": {
+    "dashboard": "Operations Dashboard",
+    "incidents": "Incident Management",
+    "reportNew": "Report Fault / Incident",
+    "contractorPortal": "Contractor Workspace",
+    "admin": "Administrative Control",
+    "users": "User Management",
+    "routing": "Provider Routing Matrix",
+    "reports": "Operational Reports",
+    "auditLogs": "Audit Logs",
+    "outbox": "Notification Outbox",
+    "settings": "System Settings",
+    "signOut": "Sign Out"
+  },
+  "status": {
+    "open": "Open",
+    "in_progress": "In Progress",
+    "pending": "Pending",
+    "resolved": "Resolved"
+  },
+  "priority": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High Priority"
+  },
+  "incidentForm": {
+    "title": "Security Equipment Fault Report",
+    "subtitle": "Town Square Control-Room Incident Dispatch",
+    "zoneLabel": "Operational Zone",
+    "zonePlaceholder": "Select community zone (Zone 1 - 4)",
+    "siteLabel": "Site / Building Location",
+    "sitePlaceholder": "Select verified site or level",
+    "categoryLabel": "Equipment Category",
+    "categoryPlaceholder": "Select category (CCTV, Barrier, NVR, etc.)",
+    "cameraNumberLabel": "Camera / Asset Reference Number",
+    "cameraNumberPlaceholder": "e.g. CAM-Z1-042",
+    "exactLocationLabel": "Exact Physical Location",
+    "exactLocationPlaceholder": "e.g. IDF12 2A1 Level 3 near service elevator",
+    "priorityLabel": "Urgency / Priority",
+    "descriptionLabel": "Fault Description & Observations",
+    "descriptionPlaceholder": "Detail symptoms, error lights, or security impact...",
+    "photoLabel": "Incident Photo Evidence",
+    "photoHelp": "JPG, PNG, or WEBP up to 15MB. Max 5 photos.",
+    "submitBtn": "Dispatch & Log Incident",
+    "submitting": "Creating Ticket...",
+    "successTitle": "Incident Logged Successfully",
+    "successMsg": "Incident ticket reference generated and queued for contractor dispatch."
+  },
+  "contractor": {
+    "portalTitle": "Authorized Contractor Portal",
+    "portalDesc": "Restricted dispatch workspace for assigned security maintenance tasks",
+    "assignedTickets": "Assigned Incidents",
+    "acknowledgeBtn": "Acknowledge Incident",
+    "submitReportBtn": "Submit Service Report",
+    "submitQuotationBtn": "Submit Quotation",
+    "workPerformed": "Work Performed",
+    "findings": "Diagnostic Findings",
+    "recommendedAction": "Recommended Further Action",
+    "completionStatus": "Completion State",
+    "quotationRef": "Quotation Reference No.",
+    "amountAED": "Estimated Amount (AED)"
+  },
+  "admin": {
+    "statsTitle": "Security Operations Command",
+    "totalIncidents": "Total Incidents",
+    "openIncidents": "Active / Open",
+    "pendingIncidents": "Pending Action",
+    "resolvedIncidents": "Resolved Incidents",
+    "highPriority": "High Priority",
+    "exportCsv": "Export Incident Data (CSV)",
+    "routingRules": "Active Category Routing Matrix"
+  },
+  "common": {
+    "search": "Search ticket, camera, location...",
+    "filter": "Filter",
+    "all": "All",
+    "zone": "Zone",
+    "category": "Category",
+    "date": "Date Reported",
+    "ticketNumber": "Ticket #",
+    "provider": "Assigned Provider",
+    "actions": "Actions",
+    "viewDetails": "View Details",
+    "cancel": "Cancel",
+    "save": "Save Changes",
+    "loading": "Loading data...",
+    "unauthorized": "Access Restricted: You lack authorization for this resource.",
+    "language": "Language"
+  }
+}

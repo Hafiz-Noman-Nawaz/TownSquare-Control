@@ -1,0 +1,26 @@
+{
+  "name": "townsquare-control-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend engine, migrations, outbox notification worker, and security tests for TownSquare Control",
+  "main": "dist/worker/index.js",
+  "scripts": {
+    "worker": "node dist/worker/index.js",
+    "worker:dev": "tsx worker/index.ts",
+    "migrate:validate": "tsx scripts/validate-migrations.ts",
+    "seed:base": "tsx seeds/index.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "dotenv": "^16.4.7",
+    "resend": "^4.1.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.7"
+  }
+}
