@@ -52,7 +52,7 @@ export default function DashboardPage() {
 
   return (
     <AppShell>
-      <div className="space-y-6">
+      <div className="space-y-5 sm:space-y-6">
         {/* Welcome Operational Banner */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
@@ -64,17 +64,17 @@ export default function DashboardPage() {
             </p>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex w-full sm:w-auto">
             {!isContractor ? (
               <Link href="/incidents/new">
-                <Button size="sm" className="gap-2 text-xs h-9 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+                <Button size="sm" className="h-9 w-full gap-2 bg-blue-600 text-xs font-semibold text-white hover:bg-blue-700 sm:w-auto">
                   <PlusCircle className="h-4 w-4" />
                   <span>{t("nav.reportNew")}</span>
                 </Button>
               </Link>
             ) : (
               <Link href="/contractor">
-                <Button size="sm" className="gap-2 text-xs h-9 bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+                <Button size="sm" className="h-9 w-full gap-2 bg-blue-600 text-xs font-semibold text-white hover:bg-blue-700 sm:w-auto">
                   <Briefcase className="h-4 w-4" />
                   <span>{t("contractor.portalTitle")}</span>
                 </Button>
@@ -84,9 +84,9 @@ export default function DashboardPage() {
         </div>
 
         {/* 6 Key Operational Metrics Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-3 lg:grid-cols-6">
           <Card className="border-l-4 border-l-slate-800">
-            <CardContent className="p-4">
+            <CardContent className="p-3 sm:p-4">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 block">
                 Total Logged
               </span>
@@ -97,7 +97,7 @@ export default function DashboardPage() {
           </Card>
 
           <Card className="border-l-4 border-l-amber-500">
-            <CardContent className="p-4">
+            <CardContent className="p-3 sm:p-4">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-amber-600 block">
                 Open / Dispatched
               </span>
@@ -108,7 +108,7 @@ export default function DashboardPage() {
           </Card>
 
           <Card className="border-l-4 border-l-blue-600">
-            <CardContent className="p-4">
+            <CardContent className="p-3 sm:p-4">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-600 block">
                 In Progress
               </span>
@@ -119,7 +119,7 @@ export default function DashboardPage() {
           </Card>
 
           <Card className="border-l-4 border-l-purple-600">
-            <CardContent className="p-4">
+            <CardContent className="p-3 sm:p-4">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-purple-600 block">
                 Pending Parts
               </span>
@@ -130,7 +130,7 @@ export default function DashboardPage() {
           </Card>
 
           <Card className="border-l-4 border-l-emerald-600">
-            <CardContent className="p-4">
+            <CardContent className="p-3 sm:p-4">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-600 block">
                 Resolved
               </span>
@@ -141,7 +141,7 @@ export default function DashboardPage() {
           </Card>
 
           <Card className="border-l-4 border-l-rose-600 bg-rose-50/20 dark:bg-rose-950/10">
-            <CardContent className="p-4">
+            <CardContent className="p-3 sm:p-4">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-rose-600 block">
                 High Priority
               </span>
@@ -157,9 +157,9 @@ export default function DashboardPage() {
           {/* Incidents by Zone Chart */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-base flex items-center justify-between">
+              <CardTitle className="flex items-start justify-between gap-3 text-base">
                 <span>Incidents by Town Square Zone</span>
-                <span className="text-xs font-normal text-slate-400">Live Operational Distribution</span>
+                <span className="hidden text-right text-xs font-normal text-slate-400 sm:block">Live Operational Distribution</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-2">
@@ -179,9 +179,9 @@ export default function DashboardPage() {
           {/* Incidents by Equipment Category */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-base flex items-center justify-between">
+              <CardTitle className="flex items-start justify-between gap-3 text-base">
                 <span>Equipment Category Breakdown</span>
-                <span className="text-xs font-normal text-slate-400">Asset Fault Share</span>
+                <span className="hidden text-right text-xs font-normal text-slate-400 sm:block">Asset Fault Share</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-2">

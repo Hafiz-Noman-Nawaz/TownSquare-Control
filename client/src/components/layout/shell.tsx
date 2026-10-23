@@ -10,7 +10,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const { dir } = useLanguage();
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans" dir={dir}>
+    <div className="flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 dark:bg-slate-950 dark:text-slate-100" dir={dir}>
       <Header onToggleMobileMenu={() => setMobileMenuOpen(!mobileMenuOpen)} />
 
       <div className="flex flex-1 overflow-hidden">
@@ -21,17 +21,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Slide-Over Drawer */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 z-50 flex md:hidden">
+          <div className="fixed inset-0 z-50 flex md:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
             <div
               className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="relative flex w-64 flex-1 flex-col bg-slate-900 text-white shadow-xl">
-              <div className="flex h-14 items-center justify-between px-4 border-b border-slate-800">
+            <div className="relative flex w-[min(19rem,calc(100vw-2rem))] flex-col bg-slate-900 text-white shadow-xl">
+              <div className="flex h-14 shrink-0 items-center justify-between border-b border-slate-800 px-4">
                 <span className="font-bold text-sm text-slate-200">TOWN SQUARE MENU</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="rounded p-1 text-slate-400 hover:text-white"
+                  className="rounded-md p-2 text-slate-400 hover:bg-slate-800 hover:text-white"
+                  aria-label="Close navigation menu"
                 >
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -44,7 +45,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         )}
 
         {/* Main Operational Workspace */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+        <main className="min-w-0 flex-1 overflow-y-auto px-3 py-4 sm:p-6 lg:p-8">
           <div className="mx-auto max-w-7xl">
             {children}
           </div>

@@ -100,9 +100,9 @@ export default function ContractorPortalPage() {
 
   return (
     <AppShell>
-      <div className="space-y-6">
+      <div className="space-y-5 sm:space-y-6">
         {/* Contractor Provider Banner */}
-        <div className="rounded-xl border border-navy-800 bg-navy-900 p-6 text-white shadow-md">
+        <div className="rounded-xl border border-navy-800 bg-navy-900 p-4 text-white shadow-md sm:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600">
@@ -121,12 +121,12 @@ export default function ContractorPortalPage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 text-xs text-slate-300">
-              <div className="rounded-lg bg-navy-950/80 p-3 text-center border border-navy-800">
+            <div className="grid grid-cols-2 gap-2 text-xs text-slate-300 sm:flex sm:items-center sm:gap-4">
+              <div className="rounded-lg border border-navy-800 bg-navy-950/80 p-2.5 text-center sm:p-3">
                 <span className="text-[10px] uppercase text-slate-500 font-semibold block">Assigned Tickets</span>
                 <span className="text-lg font-bold text-white">{incidents.length}</span>
               </div>
-              <div className="rounded-lg bg-navy-950/80 p-3 text-center border border-navy-800">
+              <div className="rounded-lg border border-navy-800 bg-navy-950/80 p-2.5 text-center sm:p-3">
                 <span className="text-[10px] uppercase text-slate-500 font-semibold block">Pending Action</span>
                 <span className="text-lg font-bold text-amber-400">
                   {incidents.filter((i) => !i.acknowledged).length}
@@ -139,15 +139,15 @@ export default function ContractorPortalPage() {
         {/* Assigned Incident Workspace Table */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-base flex items-center justify-between">
+            <CardTitle className="flex items-start justify-between gap-3 text-base">
               <span>{t("contractor.assignedTickets")}</span>
-              <span className="text-xs font-normal text-slate-500">
+              <span className="hidden text-right text-xs font-normal text-slate-500 sm:block">
                 Showing exclusively incidents assigned to your contractor account
               </span>
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
-            <div className="overflow-x-auto">
+            <div className="hidden overflow-x-auto sm:block">
               <table className="w-full text-left text-xs text-slate-700 dark:text-slate-300 rtl:text-right">
                 <thead className="bg-slate-100 dark:bg-slate-800 text-[11px] uppercase tracking-wider text-slate-500 border-b border-slate-200 dark:border-slate-700">
                   <tr>
@@ -216,6 +216,50 @@ export default function ContractorPortalPage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className="divide-y divide-slate-100 dark:divide-slate-800 sm:hidden">
+              {incidents.map((inc) => (
+                <article key={inc.id} className="space-y-3 p-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="font-mono text-sm font-bold text-blue-600 dark:text-blue-400">{inc.ticket_number}</p>
+                      <p className="mt-1 truncate text-xs font-medium text-slate-500">
+                        {inc.zone_code} · {inc.category_name}
+                      </p>
+                    </div>
+                    <Link href={`/incidents/${inc.id}`}>
+                      <Button variant="ghost" size="sm" className="h-8 w-8 p-0" aria-label={`View ${inc.ticket_number}`}>
+                        <Eye className="h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </div>
+                  <p className="line-clamp-2 text-sm text-slate-700 dark:text-slate-300">{inc.exact_location}</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant={inc.priority}>{inc.priority.toUpperCase()}</Badge>
+                    <Badge variant={inc.status}>{t(`status.${inc.status}`)}</Badge>
+                    <span className="text-[11px] text-slate-500">{formatDateTime(inc.reported_at, language)}</span>
+                  </div>
+                  {!inc.acknowledged ? (
+                    <Button
+                      size="sm"
+                      onClick={() => handleAcknowledge(inc.id)}
+                      className="h-9 w-full bg-amber-600 text-xs text-white hover:bg-amber-700"
+                    >
+                      {t("contractor.acknowledgeBtn")}
+                    </Button>
+                  ) : (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => setSelectedIncidentForReport(inc)}
+                      className="h-9 w-full gap-1 border-blue-400 text-xs text-blue-600 hover:bg-blue-50"
+                    >
+                      <FileText className="h-3 w-3" />
+                      <span>Submit Report</span>
+                    </Button>
+                  )}
+                </article>
+              ))}
             </div>
           </CardContent>
         </Card>
